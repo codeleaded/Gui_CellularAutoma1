@@ -46,8 +46,8 @@ char World_Get_N(char* world,int x,int y){
 TransformedView tv;
 
 void Setup(AlxWindow* w){
-	tv = TransformedView_New((Vec2){ GetWidth(),GetWidth() });
-	TransformedView_Offset(&tv,(Vec2){ 0.0f,0.0f });
+	tv = TransformedView_New((Vec2){ GetWidth(),GetHeight() });
+	TransformedView_Zoom(&tv,(Vec2){ 0.01f,0.01f });
 
 	world = (char*)malloc(sizeof(char) * WORLD_X * WORLD_Y);
 	memset(world,0,sizeof(char) * WORLD_X * WORLD_Y);
